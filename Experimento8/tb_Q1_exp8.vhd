@@ -1,14 +1,14 @@
--- Arquivo: tb_Q1.vhd
+-- Arquivo: tb_Q1_exp8.vhd
 
-entity tb_Q1 is
+entity tb_Q1_exp8 is
 end;
 
 library ieee;
 use ieee.std_logic_1164.all;
 
-architecture arch_tb_Q1 of tb_Q1 is
+architecture arch_tb_Q1_exp8 of tb_Q1_exp8 is
 
-    component Q1 is
+    component Q1_exp8 is
         port(
             reset : in std_logic;
             clk : in std_logic;
@@ -32,7 +32,7 @@ architecture arch_tb_Q1 of tb_Q1 is
 
 begin
 
-    contador : Q1
+    contador : Q1_exp8
         port map(
             reset => reset_tb,
             clk => clk_tb,
@@ -73,4 +73,4 @@ begin
 
     end process estimulo;
 
-end arch_tb_Q1;
+end arch_tb_Q1_exp8;

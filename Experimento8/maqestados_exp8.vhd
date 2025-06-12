@@ -1,9 +1,9 @@
--- Arquivo: maqestados.vhd
+-- Arquivo: maqestados_exp8.vhd
 
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity maqestados is
+entity maqestados_exp8 is
     port(
         clk : in std_logic;
         ligadesliga : in std_logic;
@@ -17,9 +17,9 @@ entity maqestados is
         semaforoA : out std_logic_vector(2 downto 0);
         semaforoB : out std_logic_vector(2 downto 0)
     );
-end maqestados;
+end maqestados_exp8;
 
-architecture arch_maqestados of maqestados is
+architecture arch_maqestados_exp8 of maqestados_exp8 is
 
     type state is (A_green, B_green, A_yellow, B_yellow, both_red1, both_red2, inter_yellow, inter_off);
 
@@ -146,4 +146,4 @@ begin
         end case;
     end process;
 
-end arch_maqestados;
+end arch_maqestados_exp8;

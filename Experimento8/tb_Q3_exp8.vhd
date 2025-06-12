@@ -1,14 +1,14 @@
--- Arquivo: tb_Q3.vhd
+-- Arquivo: tb_Q3_exp8.vhd
 
-entity tb_Q3 is
+entity tb_Q3_exp8 is
 end;
 
 library ieee;
 use ieee.std_logic_1164.all;
 
-architecture arch_tb_Q3 of tb_Q3 is
+architecture arch_tb_Q3_exp8 of tb_Q3_exp8 is
 
-    component Q3 is
+    component Q3_exp8 is
         port(
             clk : in std_logic;
             ligadesliga : in std_logic;
@@ -32,7 +32,7 @@ architecture arch_tb_Q3 of tb_Q3 is
 
 begin
 
-    sistema : Q3
+    sistema : Q3_exp8
         port map(
             ligadesliga => ligadesliga_tb,
             sensorA => sensorA_tb,
@@ -68,4 +68,4 @@ begin
         sensorA_tb <= '1'; wait for 10 sec;
     end process estimulo;
 
-end arch_tb_Q3;
+end arch_tb_Q3_exp8;

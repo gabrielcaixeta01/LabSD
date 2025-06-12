@@ -1,9 +1,9 @@
--- Arquivo: cont10.vhd
+-- Arquivo: cont10_exp8.vhd
 
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity cont10 is
+entity cont10_exp8 is
     port (
         reset : in std_logic;
         clk : in std_logic;
@@ -14,9 +14,9 @@ entity cont10 is
         Q : out std_logic_vector(3 downto 0);
         rco : out std_logic
     );
-end cont10;
+end cont10_exp8;
 
-architecture arch_cont10 of cont10 is
+architecture arch_cont10_exp8 of cont10_exp8 is
     type state is (ST0, ST1, ST2, ST3, ST4, ST5, ST6, ST7, ST8, ST9);
     signal currentstate, nextstate, loadstate: state;
 begin
@@ -134,4 +134,4 @@ begin
                 end if;
         end case;
     end process comb_proc;
-end arch_cont10;
+end arch_cont10_exp8;

@@ -1,9 +1,9 @@
--- Arquivo: Q1.vhd
+-- Arquivo: Q1_exp8.vhd
 
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity Q1 is
+entity Q1_exp8 is
     port(
         reset : in std_logic;
         clk : in std_logic;
@@ -14,11 +14,11 @@ entity Q1 is
         cont_dez : out std_logic_vector(3 downto 0);
         cont_uni : out std_logic_vector(3 downto 0)
     );
-end Q1;
+end Q1_exp8;
 
-architecture arch_Q1 of Q1 is
+architecture arch_Q1_exp8 of Q1_exp8 is
 
-    component cont10 is
+    component cont10_exp8 is
         port(
             reset : in std_logic;
             clk : in std_logic;
@@ -35,7 +35,7 @@ architecture arch_Q1 of Q1 is
 
 begin
 
-    unid : cont10 port map(
+    unid : cont10_exp8 port map(
         reset => reset,
         clk => clk,
         e => e,
@@ -46,7 +46,7 @@ begin
         rco => rco_arch
     );
 
-    dez : cont10 port map(
+    dez : cont10_exp8 port map(
         reset => reset,
         clk => clk,
         e => e,
@@ -57,4 +57,4 @@ begin
         rco => open
     );
 
-end arch_Q1;
+end arch_Q1_exp8;

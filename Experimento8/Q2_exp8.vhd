@@ -1,9 +1,9 @@
--- Arquivo: Q2.vhd
+-- Arquivo: Q2_exp8.vhd
 
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity Q2 is
+entity Q2_exp8 is
     port(
         clk : in std_logic;
         reset : in std_logic;
@@ -14,11 +14,11 @@ entity Q2 is
         cont_dezena : out std_logic_vector(3 downto 0);
         cont_unidade : out std_logic_vector(3 downto 0)
     );
-end Q2;
+end Q2_exp8;
 
-architecture arch_Q2 of Q2 is
+architecture arch_Q2_exp8 of Q2_exp8 is
 
-    component Q1 is
+    component Q1_exp8 is
         port(
             reset : in std_logic;
             clk : in std_logic;
@@ -31,7 +31,7 @@ architecture arch_Q2 of Q2 is
         );
     end component;
 
-    component timeflags is
+    component timeflags_exp8 is
         port(
             cont_dezena : in std_logic_vector(3 downto 0);
             cont_unidade : in std_logic_vector(3 downto 0);
@@ -47,7 +47,7 @@ architecture arch_Q2 of Q2 is
 
 begin
 
-    contador : Q1
+    contador : Q1_exp8
         port map(
             reset => reset,
             clk => clk,
@@ -59,7 +59,7 @@ begin
             cont_uni => uni
         );
 
-    flags : timeflags
+    flags : timeflags_exp8
         port map(
             cont_dezena => dez,
             cont_unidade => uni,
@@ -72,4 +72,4 @@ begin
     cont_dezena <= dez;
     cont_unidade <= uni;
 
-end arch_Q2;
+end arch_Q2_exp8;

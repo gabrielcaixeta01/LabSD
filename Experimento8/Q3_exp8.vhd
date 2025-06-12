@@ -1,9 +1,9 @@
--- Arquivo: Q3.vhd
+-- Arquivo: Q3_exp8.vhd
 
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity Q3 is
+entity Q3_exp8 is
     port(
         clk : in std_logic;
         ligadesliga : in std_logic;
@@ -14,11 +14,11 @@ entity Q3 is
         semaforoA : out std_logic_vector(2 downto 0);
         semaforoB : out std_logic_vector(2 downto 0)
     );
-end Q3;
+end Q3_exp8;
 
-architecture arch_Q3 of Q3 is
+architecture arch_Q3_exp8 of Q3_exp8 is
 
-    component Q1 is
+    component Q1_exp8 is
         port(
             reset : in std_logic;
             clk : in std_logic;
@@ -31,7 +31,7 @@ architecture arch_Q3 of Q3 is
         );
     end component;
 
-    component timeflags is
+    component timeflags_exp8 is
         port(
             cont_dezena : in std_logic_vector(3 downto 0);
             cont_unidade : in std_logic_vector(3 downto 0);
@@ -42,7 +42,7 @@ architecture arch_Q3 of Q3 is
         );
     end component;
 
-    component maqestados is
+    component maqestados_exp8 is
         port(
             clk : in std_logic;
             ligadesliga : in std_logic;
@@ -68,7 +68,7 @@ architecture arch_Q3 of Q3 is
 
 begin
 
-    contador : Q1
+    contador : Q1_exp8
         port map(
             reset => reset,
             clk => clk,
@@ -80,7 +80,7 @@ begin
             cont_uni => uni
         );
 
-    flags : timeflags
+    flags : timeflags_exp8
         port map(
             cont_dezena => dez,
             cont_unidade => uni,
@@ -90,7 +90,7 @@ begin
             T60 => T60_arch
         );
 
-    estados : maqestados
+    estados : maqestados_exp8
         port map(
             ligadesliga => ligadesliga,
             clk => clk,
@@ -108,4 +108,4 @@ begin
     cont_dezena <= dez;
     cont_unidade <= uni;
 
-end arch_Q3;
+end arch_Q3_exp8;

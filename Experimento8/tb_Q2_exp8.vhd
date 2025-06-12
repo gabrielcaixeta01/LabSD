@@ -1,14 +1,14 @@
--- Arquivo: Q2_tb.vhd
+-- Arquivo: tb_Q2_exp8.vhd
 
-entity Q2_tb is
+entity tb_Q2_exp8 is
 end;
 
 library ieee;
 use ieee.std_logic_1164.all;
 
-architecture arch_Q2_tb of Q2_tb is
+architecture arch_tb_Q2_exp8 of tb_Q2_exp8 is
 
-    component Q2 is
+    component Q2_exp8 is
         port(
             clk : in std_logic;
             reset : in std_logic;
@@ -18,19 +18,6 @@ architecture arch_Q2_tb of Q2_tb is
             T60 : out std_logic;
             cont_dezena : out std_logic_vector(3 downto 0);
             cont_unidade : out std_logic_vector(3 downto 0)
-        );
-    end component;
-
-    component Q1 is
-        port(
-            reset : in std_logic;
-            clk : in std_logic;
-            e : in std_logic;
-            load : in std_logic;
-            load_dez : in std_logic_vector(3 downto 0);
-            load_uni : in std_logic_vector(3 downto 0);
-            cont_dez : out std_logic_vector(3 downto 0);
-            cont_uni : out std_logic_vector(3 downto 0)
         );
     end component;
 
@@ -45,7 +32,7 @@ architecture arch_Q2_tb of Q2_tb is
 
 begin
 
-    temporizador : Q2
+    temporizador : Q2_exp8
         port map(
             reset => reset_tb,
             clk => clk_tb,
@@ -66,4 +53,4 @@ begin
         reset_tb <= '0'; wait for 25 sec;
     end process estimulo;
 
-end arch_Q2_tb;
+end arch_tb_Q2_exp8;
